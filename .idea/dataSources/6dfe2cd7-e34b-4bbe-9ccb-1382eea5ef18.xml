@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="online_retail_shop@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.4">
+    <root id="1"/>
+    <schema id="2" parent="1" name="online_retail_shop">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="acomat"/>
+    <schema id="4" parent="1" name="faith_restaurant"/>
+    <schema id="5" parent="1" name="information_schema"/>
+    <schema id="6" parent="1" name="lecture_alert_system"/>
+    <schema id="7" parent="1" name="mysql"/>
+    <schema id="8" parent="1" name="patient_system"/>
+    <schema id="9" parent="1" name="performance_schema"/>
+    <schema id="10" parent="1" name="phpmyadmin"/>
+    <schema id="11" parent="1" name="shoopingcart"/>
+    <schema id="12" parent="1" name="shopping"/>
+    <schema id="13" parent="1" name="towapp"/>
+    <schema id="14" parent="1" name="voting_system"/>
+    <schema id="15" parent="1" name="wordpress_db"/>
+    <table id="16" parent="2" name="admin"/>
+    <table id="17" parent="2" name="cart"/>
+    <table id="18" parent="2" name="category"/>
+    <table id="19" parent="2" name="items"/>
+    <table id="20" parent="2" name="sales"/>
+    <table id="21" parent="2" name="users"/>
+    <column id="22" parent="16" name="adminID">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="23" parent="16" name="uname">
+      <Position>2</Position>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="24" parent="16" name="pwd">
+      <Position>3</Position>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="25" parent="16" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>adminID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="26" parent="17" name="cartID">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="27" parent="17" name="code">
+      <Position>2</Position>
+      <DataType>varchar(10)|0</DataType>
+    </column>
+    <column id="28" parent="17" name="itemid">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="29" parent="17" name="qty">
+      <Position>4</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="30" parent="17" name="total">
+      <Position>5</Position>
+      <DataType>decimal(10,2)|0</DataType>
+    </column>
+    <column id="31" parent="17" name="date">
+      <Position>6</Position>
+      <DataType>varchar(20)|0</DataType>
+    </column>
+    <index id="32" parent="17" name="itemid">
+      <ColNames>itemid</ColNames>
+    </index>
+    <key id="33" parent="17" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>cartID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="34" parent="17" name="cart_ibfk_1">
+      <ColNames>itemid</ColNames>
+      <RefSchemaName>online_retail_shop</RefSchemaName>
+      <RefTableName>items</RefTableName>
+      <RefColNames>itemID</RefColNames>
+    </foreign-key>
+    <column id="35" parent="18" name="catID">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="36" parent="18" name="catName">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="37" parent="18" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>catID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="38" parent="19" name="itemID">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="39" parent="19" name="itemName">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="40" parent="19" name="itemPrice">
+      <Position>3</Position>
+      <DataType>decimal(10,2)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="41" parent="19" name="itemCategory">
+      <Position>4</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="42" parent="19" name="itemImage">
+      <Position>5</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="43" parent="19" name="dateAdded">
+      <Position>6</Position>
+      <DataType>timestamp|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
+    </column>
+    <key id="44" parent="19" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>itemID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="45" parent="20" name="salesID">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="46" parent="20" name="salesCode">
+      <Position>2</Position>
+      <DataType>varchar(10)|0</DataType>
+    </column>
+    <column id="47" parent="20" name="user_id">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="48" parent="20" name="full_name">
+      <Position>4</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="49" parent="20" name="email">
+      <Position>5</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="50" parent="20" name="address">
+      <Position>6</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="51" parent="20" name="tel_num">
+      <Position>7</Position>
+      <DataType>varchar(11)|0</DataType>
+    </column>
+    <column id="52" parent="20" name="status">
+      <Position>8</Position>
+      <DataType>varchar(15)|0</DataType>
+    </column>
+    <column id="53" parent="20" name="totalAmount">
+      <Position>9</Position>
+      <DataType>decimal(10,2)|0</DataType>
+    </column>
+    <column id="54" parent="20" name="notes">
+      <Position>10</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="55" parent="20" name="sales_date">
+      <Position>11</Position>
+      <DataType>timestamp|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
+    </column>
+    <index id="56" parent="20" name="user_id">
+      <ColNames>user_id</ColNames>
+    </index>
+    <key id="57" parent="20" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>salesID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="58" parent="20" name="sales_ibfk_1">
+      <ColNames>user_id</ColNames>
+      <RefSchemaName>online_retail_shop</RefSchemaName>
+      <RefTableName>users</RefTableName>
+      <RefColNames>userID</RefColNames>
+    </foreign-key>
+    <column id="59" parent="21" name="userID">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="60" parent="21" name="username">
+      <Position>2</Position>
+      <DataType>varchar(75)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="61" parent="21" name="email">
+      <Position>3</Position>
+      <DataType>varchar(100)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="62" parent="21" name="password">
+      <Position>4</Position>
+      <DataType>varchar(100)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="63" parent="21" name="tel_num">
+      <Position>5</Position>
+      <DataType>varchar(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="64" parent="21" name="date_reg">
+      <Position>6</Position>
+      <DataType>timestamp|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
+    </column>
+    <key id="65" parent="21" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>userID</ColNames>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>
